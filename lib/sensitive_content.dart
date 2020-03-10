@@ -6,7 +6,12 @@ class SensitiveContent {
   static const MethodChannel _channel = const MethodChannel('sensitive_content');
 
   static Future hide() async {
-    String result = await _channel.invokeMethod('hide');
-    var emre = 5;
+    var result = await _channel.invokeMethod('hide');
+    print("$result");
+  }
+
+  static Future show() async {
+    var result = await _channel.invokeMethod('show');
+    print("$result");
   }
 }
