@@ -12,19 +12,18 @@ public class SwiftSensitiveContentPlugin: NSObject, FlutterPlugin {
     if(call.method == "hide") {
         result(true)
         DispatchQueue.main.async {
-             if let window = UIApplication.shared.windows.first{
-                        if let topController = window.visibleViewController() {
-                            print(topController)
-                            let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
-                            let blurEffectView = UIVisualEffectView(effect: blurEffect)
-                            blurEffectView.frame = topController.view.bounds
-                            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-                            topController.view.addSubview(blurEffectView)
-                        }
-                    }
+             if let window = UIApplication.shared.windows.first {
+                if let topController = window.visibleViewController() {
+                    print(topController)
+                    let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
+                    let blurEffectView = UIVisualEffectView(effect: blurEffect)
+                    blurEffectView.frame = topController.view.bounds
+                    blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                    topController.view.addSubview(blurEffectView)
+                }
+             }
         }
     } else if(call.method == "show") {
-        //let root = UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: false, completion: nil)
         DispatchQueue.main.async {
             if let window = UIApplication.shared.windows.first{
                 if let topController = window.visibleViewController() {
