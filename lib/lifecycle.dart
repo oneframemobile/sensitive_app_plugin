@@ -8,12 +8,12 @@ class Lifecycle extends StatefulWidget {
   final Widget child;
 
   Lifecycle({
-    Key key,
-    @required this.inactive,
-    @required this.resumed,
-    @required this.paused,
-    @required this.detached,
-    @required this.child,
+    Key? key,
+    required this.inactive,
+    required this.resumed,
+    required this.paused,
+    required this.detached,
+    required this.child,
   }) : super(key: key);
 
   @override
@@ -21,7 +21,6 @@ class Lifecycle extends StatefulWidget {
 }
 
 class _LifecycleState extends State<Lifecycle> with WidgetsBindingObserver {
-
   @override
   void initState() {
     WidgetsBinding.instance.addObserver(this);

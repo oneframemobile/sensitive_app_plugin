@@ -4,7 +4,7 @@ import 'package:sensitive_content/sensitive.dart';
 class SensitiveView extends StatefulWidget {
   final Widget child;
 
-  SensitiveView({Key key, @required this.child}) : super(key: key);
+  SensitiveView({Key? key, required this.child}) : super(key: key);
 
   @override
   _SensitiveViewState createState() => _SensitiveViewState();
